@@ -3,6 +3,7 @@
 # lab4
 # two arguments passing
 count=2;
+
 if [ $# -lt $count ]; then
 	echo "too few arguments, exiting..."
 else
@@ -16,8 +17,7 @@ else
 	if [ -d $2 ]; then
 		echo "$2 directory existed"
 	else
-		#e.g.: /include/backupdir
-		mkdir $1$2
+		mkdir $2
 		echo "$2 directory created"
 	fi
 fi
