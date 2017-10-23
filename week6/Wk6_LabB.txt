@@ -1,0 +1,26 @@
+Week 6 Lab (b) Exercises
+EC2 Region Check
+
+Run a command to verify that your credentials are configured correctly and that you can connect to AWS.
+
+
+[epa@localhost ~]$ aws ec2 describe-regions --output table
+
+
+Exercise
+
+Write a script that checks to test the health status of an EC2 instance, using the command line tools. 
+The script would take one parameter which is the ID of the instance to check and prints out the EC2 
+status information.
+
+Usage: ./instance.check.sh instance-id
+Output: the instance is running
+Output: no such instance running
+REF: https://aws.amazon.com/cli/
+
+Test: 
+
+i-033390d4b2e4fb049
+i-07bc96b8192810fe0
+
+aws ec2 describe-instance-status --instance-ids i-1234567890abcdef0
