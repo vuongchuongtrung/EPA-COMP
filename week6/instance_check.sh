@@ -1,14 +1,18 @@
 #!/bin/bash
 
-id=$1
-if [ -n $id ]; then
-	#printf "Enter instance id: "
-	#read id
+id=${1}
+if [ -n ${id} ]; then
 	id=i-033390d4b2e4fb049
 fi
 
-aws ec2 describe-instance-status --instance-ids $id --query InstanceStatuses[*].InstanceState.Name  --output table
+status=`aws ec2 describe-instance-status --instance-ids ${id} --query InstanceStatuses[*].InstanceState.Name  --output table`
+if [ -z ${status} ]; then
+	printf "Instance NOT existing|running\n"
+else
+	printf "Instance running\n"
+fi
 
 
-printf "\nFinished, Good Job...\n"
+
+
 
