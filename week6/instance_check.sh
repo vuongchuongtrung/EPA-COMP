@@ -26,7 +26,7 @@ fi
 
 
 aws ec2 describe-instance-status --instance-id ${id1} > "${logPath}/${dummy}"
-count=`grep running ${logPath}/${dummy} | wc -l`
+count=`grep running "${logPath}/${dummy}" | wc -l`
 # get current date-time
 dateTime=`date`
 if [ ${count} -gt 0 ]; then
@@ -46,4 +46,4 @@ else
 fi
 
 # removing/deleting dummy.txt
-rm -rf "${logPath}/${dummy}"
+# rm -rf "${logPath}/${dummy}"
