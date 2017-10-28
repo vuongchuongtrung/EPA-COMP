@@ -25,10 +25,10 @@ printf "Status: \n" >> ${fileName}
 # count "running", but now not used
 # run=`grep running ${fileName} | wc -l`
 
-status1=`aws ec2 describe-instance-status --instance-id1s ${id1}`
+status1=`aws ec2 describe-instance-status --instance-id ${id1}`
 count1=`grep running ${status1} | wc -l`
 printf "${count1}\n"
-status2=`aws ec2 describe-instance-status --instance-id1s ${id2}`
+status2=`aws ec2 describe-instance-status --instance-id ${id2}`
 
 printf "Status: " >> ${fileName}
 if [ ${run} -gt 0 ]; then
