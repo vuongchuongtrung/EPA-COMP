@@ -1,15 +1,31 @@
 #!/bin/bash
 
 id=${1}
+# if user do not pass in instance id, a default instance id will be set
 if [ -n ${id} ]; then
 	id=i-033390d4b2e4fb049
 fi
 
-#status=`aws ec2 describe-instance-status --instance-ids ${id} --query InstanceStatuses[*].InstanceState.Name=="stopped" --output table`
+fileName=checkInstance.txt
+# get current date-time
+details=`date`
+# will override, just want to keep fresh details
+printf "Checked at: ${details}" > ${fileName}
+
+#status=`aws ec2 describe-instance-status --instance-ids ${id} --query InstanceStatuses[*].InstanceStatus`
+
+# append status to file
+# aws ec2 describe-instance-status --instance-ids ${id} >> ${fileName}
 aws ec2 describe-instance-status --instance-ids ${id}
-cnt=`grep running status.txt | wc -l`
-if [ ${cnt} -gt 0 ]; then
-	echo "The instance is running\n"
+# counting running in the file 
+run=`grep running ${fileName} | wc -l`
+
+printf "Status: " >> ${fileName}
+if [ ${run} -gt 0 ]; then
+	printf "running" >> ${fileName}
 else
-	echo "Instance stopped\n"
+	printf "blank" >> ${fileName}
 fi
+
+# print out message letting user know the script has run and finished
+printf "${Yellow}Script ran and finished${Color_Off}\n"
