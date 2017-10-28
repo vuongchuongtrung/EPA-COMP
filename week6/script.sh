@@ -28,8 +28,4 @@ else
 fi
 
 # print out message letting user know the script has run and finished
-printf "${Yellow}Script ran and finished${Color_Off}\n"
-
-
-aws ec2 describe-instance-status --instance-id i-033390d4b2e4fb049
-aws ec2 describe-instance-status --instance-id i-07bc96b8192810fe0
+printf "Script ran and finished\n"
