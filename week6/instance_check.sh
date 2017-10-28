@@ -26,6 +26,6 @@ if [ ${count} -gt 0 ]; then
 else
 	printf "${id}: blank/no result\n" >> ${fileName}
 fi
-
+echo "testing..."
 # print out message letting user know the script has run and finished
 printf "${Yellow}Script ran and finished${Color_Off}\n"
