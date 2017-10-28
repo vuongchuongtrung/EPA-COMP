@@ -27,7 +27,7 @@ printf "Status: \n" >> ${fileName}
 
 status1=`aws ec2 describe-instance-status --instance-id ${id1}`
 count1=`grep running ${status1} | wc -l`
-printf "${count1}\n"
+printf "${count1}\n" >> ${fileName}
 status2=`aws ec2 describe-instance-status --instance-id ${id2}`
 
 printf "Status: " >> ${fileName}
