@@ -16,8 +16,8 @@ if [ -n ${id2} ]; then
 fi
 
 
-if [ ! -e "${logPath}/${dummy}" ]; then
-	touch "${logPath}/${dummy}"
+if [ ! -e ${dummy} ]; then
+	touch ${dummy}
 fi
 
 if [ ! -e "${logPath}/${log}" ]; then
@@ -25,8 +25,8 @@ if [ ! -e "${logPath}/${log}" ]; then
 fi
 
 
-aws ec2 describe-instance-status --instance-id ${id1} > "${logPath}/${dummy}"
-count=`grep running "${logPath}/${dummy}" | wc -l`
+aws ec2 describe-instance-status --instance-id ${id1} > ${dummy}
+count=`grep running ${dummy} | wc -l`
 # get current date-time
 dateTime=`date`
 if [ ${count} -gt 0 ]; then
@@ -35,7 +35,7 @@ else
 	printf "${dateTime}\t${id1}:   no such instance running\n" >> "${logPath}/${log}"
 fi
 
-aws ec2 describe-instance-status --instance-id ${id2} > "${logPath}/${dummy}"
+aws ec2 describe-instance-status --instance-id ${id2} > ${dummy}
 count=`grep running ${logPath}/${dummy} | wc -l`
 # get current date-time
 dateTime=`date`
@@ -46,4 +46,4 @@ else
 fi
 
 # removing/deleting dummy.txt
-# rm -rf "${logPath}/${dummy}"
+rm -rf ${dummy}
