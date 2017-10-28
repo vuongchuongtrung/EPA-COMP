@@ -46,4 +46,4 @@ else
 fi
 
 # removing/deleting dummy.txt
-rm -rf ${dummy}
+rm ${dummy}
