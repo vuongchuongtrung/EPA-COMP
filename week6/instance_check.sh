@@ -27,14 +27,21 @@ printf "Status: \n" >> ${fileName}
 
 status1=`aws ec2 describe-instance-status --instance-id ${id1}`
 count1=`grep running ${status1} | wc -l`
-printf "${count1}\n" >> ${fileName}
-status2=`aws ec2 describe-instance-status --instance-id ${id2}`
 
-printf "Status: " >> ${fileName}
-if [ ${run} -gt 0 ]; then
-	printf "running" >> ${fileName}
+status2=`aws ec2 describe-instance-status --instance-id ${id2}`
+count2=`grep stopped ${status2} | wc -l`
+
+printf "Status: \n" >> ${fileName}
+if [ ${count1} -gt 0 ]; then
+	printf "${id1}: running\n" >> ${fileName}
 else
-	printf "blank" >> ${fileName}
+	printf "${id1}: blank/no result\n" >> ${fileName}
+fi
+
+if [ ${count2} -gt 0 ]; then
+	printf "${id2}: running\n" >> ${fileName}
+else
+	printf "${id2}: blank/no result\n" >> ${fileName}
 fi
 
 # print out message letting user know the script has run and finished
