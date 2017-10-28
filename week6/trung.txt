@@ -1,4 +1,0 @@
-{
-    "InstanceStatuses": []
-}
-Instance stopped\n

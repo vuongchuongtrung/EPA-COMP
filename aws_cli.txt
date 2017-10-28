@@ -1,0 +1,15 @@
+Week 6 Lab Configuring AWS cli access
+==============================================================================
+[epa@localhost ~]$ pip install awscli --upgrade --user
+[epa@localhost ~]$ aws --version
+# should get something similar like the below
+aws-cli/1.11.161 Python/2.7.13 Linux/4.12.13-300.fc26.x86_64 botocore/1.7.19
+
+[epa@localhost ~]$ aws configure
+# keys below input according to .aws tar
+AWS Access Key ID [None]: 
+AWS Secret Access Key [None]: 
+Default region name [None]: eu-west-1
+Default output format [None]: json
+
+[epa@localhost ~]$ aws ec2 describe-regions --output table
