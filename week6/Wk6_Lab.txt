@@ -36,3 +36,27 @@ i-033390d4b2e4fb049
 i-07bc96b8192810fe0
 
 aws ec2 describe-instance-status --instance-ids i-033390d4b2e4fb049
+aws ec2 describe-instance-status --instance-ids i-033390d4b2e4fb049 --query InstanceStatuses[*].InstanceState
+
+========================================================================================================
+Exercise
+
+Write a script that checks to test the health status of an EC2 instance, 
+using the command line tools. The script would take one parameter 
+which is the ID of the instance to check and prints out the EC2 status information.
+
+Usage: ./instance.check.sh instance-id
+Output: the instance is running
+Output: no such instance running
+REF: https://aws.amazon.com/cli/
+
+Test cases: 
+i-033390d4b2e4fb049
+i-07bc96b8192810fe0
+**Bonus Question
+
+Place your script into a cron job. Have the script run every minute and check BOTH ids above, 
+and if either is not available, the script writes a message to a logfile
+
+
+
