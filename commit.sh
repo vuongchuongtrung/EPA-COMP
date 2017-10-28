@@ -15,7 +15,10 @@ if [ -z $message ]; then
 	printf "Enter commit message: "
 	read message
 fi
+
 git commit -m "$message"
 printf "git push\n"
 git push
 
+printf "Press enter to quit...\n"
+read -p ""
