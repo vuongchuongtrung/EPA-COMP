@@ -10,13 +10,16 @@ printf "git add -A\n"
 git add -A
 printf "git commit\n"
 
-message=$1
-if [ -z $message ]; then
+message=${1}
+if [ -z ${message} ]; then
 	printf "Enter commit message: "
 	read message
+	if [ -z ${message} ]; then
+		message="update/add file(s)" 
+	fi
 fi
 
-git commit -m "$message"
+git commit -m "${message}"
 printf "git push\n"
 git push
 
