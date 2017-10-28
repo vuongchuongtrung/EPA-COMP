@@ -18,7 +18,7 @@ count=`grep running ${fileName} | wc -l`
 # get current date-time
 details=`date`
 # will override, just want to keep fresh details
-printf "Checked at: ${details}\n\n" > ${fileName}
+printf "Checked at: ${details}\n" > ${fileName}
 printf "Status: \n" >> ${fileName}
 
 if [ ${count} -gt 0 ]; then
@@ -26,6 +26,8 @@ if [ ${count} -gt 0 ]; then
 else
 	printf "${id}: blank/no result\n" >> ${fileName}
 fi
-echo "testing..."
+
+logInfo=`grep ${fileName}`
+printf "${logInfo}"
 # print out message letting user know the script has run and finished
 printf "${Yellow}Script ran and finished${Color_Off}\n"
