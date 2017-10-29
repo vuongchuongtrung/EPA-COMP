@@ -16,6 +16,7 @@ if [ -z ${message} ]; then
 	read message
 	if [ -z ${message} ]; then
 		message="update/add file(s)" 
+		printf "${message}\n"
 	fi
 fi
 
