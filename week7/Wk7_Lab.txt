@@ -1,0 +1,13 @@
+Week 7 Lab AWS S3
+Only start this lab when you have uploaded the solution for lab week6
+
+Using AWS CLI, monitor the s3 epa-lab-week7 bucket for new files, 
+printing the total number of files found. 
+
+EG:
+[epa@localhost ~]$  ./monitor_s3.sh <bucketname>
+0 files found in bucket
+
+[epa@localhost ~]$  ./monitor_s3.sh <bucketname>
+1 files found in bucket
+
