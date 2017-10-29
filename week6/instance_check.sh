@@ -46,4 +46,5 @@ else
 fi
 
 # clean up unwanted file by removing/deleting dummy.txt
-rm -rf "${logPath}/${dummy}"
+# but no clean up for now for cronjob as recycle bin will fill up
+# rm -rf "${logPath}/${dummy}"
