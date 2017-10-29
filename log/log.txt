@@ -1,6 +1,0 @@
-Sat 28 Oct 21:55:01 BST 2017	i-033390d4b2e4fb049	 no such instance running
-Sat 28 Oct 21:55:01 BST 2017	i-07bc96b8192810fe0:   no such instance running
-Sat 28 Oct 21:56:01 BST 2017	i-033390d4b2e4fb049	 no such instance running
-Sat 28 Oct 21:56:01 BST 2017	i-07bc96b8192810fe0:   no such instance running
-Sat 28 Oct 21:57:01 BST 2017	i-033390d4b2e4fb049	 no such instance running
-Sat 28 Oct 21:57:01 BST 2017	i-07bc96b8192810fe0	 no such instance running
