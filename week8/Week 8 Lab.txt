@@ -1,0 +1,18 @@
+Week 8 Lab
+(a) Installing load monitoring tools - as root, use dnf install to install the packages sysstat and gcc-c++
+
+(b) Download and compile
+
+loadtest.C
+- follow the instructions in the code to compile the program
+
+(c) Write a wrapper shell script that takes two parameters, the number of users to pass on to loadtest and the length in time to run the load test. The shell script then terminates the load test using pkill
+
+for example
+
+[epa@localhost ~]$ ./loadWrapper.sh 100 10
+
+would run the load test code for 100 users for 10 seconds
+
+(d) Commit your code to github, week8
+
