@@ -1,0 +1,26 @@
+Week 9 Lab
+Before starting this lab, lets complete last weeks lab fully
+
+jq site: https://stedolan.github.io/jq/manual/
+Parsing json CLI data 
+
+Lots of CLI tools return data in json format (eg, our AWS tools, and mpstat). We need to parse this data and extract the values of interest to us. We will use mpstat as the example.
+(a) Installing the json parser
+
+As root, install the jq package, now exit and work as epauser
+(b) invoking mpstat in json format
+
+    using the man page for mpstat, work out how to invoke it so that it returns json not strings
+    using the man page for mpstat, find out how mpstat can run for an interval of 10 seconds and produce 1 sample of CPU data
+
+(c) piping the commands together
+
+to make mpstat and jq work together, you will need to use the pip command. Watch the demonstration given by the lecturer
+(d) Putting it all together
+Write a script for week9, called "cpu_json.sh" with the following function:
+
+    the script runs mpstat for 10 seconds and collects one sample of output
+    the script uses pipe to jq to have jq identify the cpu-load value from mpstat
+    the script uses jq to subtract this number from 100 to obtain the utilization of the cpu
+
+(e) Check your work into github
