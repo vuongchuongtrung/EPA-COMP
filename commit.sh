@@ -24,5 +24,5 @@ git commit -m "${message}"
 printf "git push\n"
 git push
 
-printf "Press enter to quit...\n"
+printf "Press any key to continue...\n"
 read -p ""
