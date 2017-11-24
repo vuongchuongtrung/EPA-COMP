@@ -8,7 +8,8 @@
 # Perform string is none-zero check (simple check)
 if [ -n $1 ]; then
 	if [ -n $2 ]; then
-		utilisation=`mpstat -P 0 -o JSON $1 $2 | jq '100 - .sysstat.hosts[0].statistics[0]."cpu-load"[0].idle'`
+		#utilisation=`mpstat -P 0 -o JSON $1 $2 | jq '100 - .sysstat.hosts[0].statistics[0]."cpu-load"[0].idle'`
+		utilisation=`mpstat -o JSON 10 1 | jq -C '100 - .sysstat.hosts[0].statistics[0]."cpu-load"[0].idle'`
 		printf "utilisation = ${utilisation} \n"
 	else
 		printf "1\n"
