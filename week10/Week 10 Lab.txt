@@ -1,0 +1,46 @@
+Week 10 Lab
+
+Using Linux redirect
+(a) Linux redirect using > 
+
+Redirect takes the contents which would otherwise appear on the screen and saves the contents to a file. 
+
+EG
+
+[epa@localhost ~]$  echo "this goes to a file truncating it first" > file.txt
+
+here, file.txt will be truncated to zero bytes before the write. If the file exists prior to redirecting it will be truncated without warning
+(b) Linux redirect using >>
+
+Because > truncates a file to zero bytes, we would like a redirect that appends to the file if it exists, and creates it if it does not exist. This is the purpose of >>
+
+
+[epa@localhost ~]$  echo "this goes to a file appending it" >> file.txt
+
+ We can also embed commands into an echo & redirect
+
+[epa@localhost ~]$  echo "`date` this goes to a file appending it" >> file.txt
+
+(c) Counting files in /tmp
+
+Write a script to count the number of files in /tmp. If the number of files exceeds a parameter, have the script write an error message to a log file, using redirect append 
+(d) using the commands together in a cron script
+
+If we want to run a job periodically, using crontab
+
+[epa@localhost ~]$  crontab -e
+
+We can specify
+
+    minute (from 0 to 59)
+    hour (from 0 to 23)
+    day of month (from 1 to 31)
+    month (from 1 to 12)
+    day of week (from 0 to 6) (0=Sunday)
+
+and the last parameter is the job to run
+
+
+(e) Put your script into cron to run every minute
+
+(f) Check your work into github

@@ -1,11 +1,1 @@
-Fri 24 Nov 10:54:07 GMT 2017 The number of files exceeds a parameter
-Fri 24 Nov 10:54:16 GMT 2017 The number of files exceeds a parameter
-Fri 24 Nov 10:54:21 GMT 2017 The number of files exceeds a parameter
-Fri 24 Nov 10:54:45 GMT 2017 The number of files exceeds a parameter
-Fri 24 Nov 10:55:18 GMT 2017 Good count
-Fri 24 Nov 10:55:21 GMT 2017 Good count
-Fri 24 Nov 10:55:23 GMT 2017 Good count
-Fri 24 Nov 10:55:25 GMT 2017 Good count
-Fri 24 Nov 10:55:26 GMT 2017 Good count
-Fri 24 Nov 10:55:28 GMT 2017 Good count
-Fri 24 Nov 10:55:30 GMT 2017 The number of files exceeds a parameter
+Fri 24 Nov 17:17:47 GMT 2017  |  Max number of files 5  |  exceeded in /tmp
