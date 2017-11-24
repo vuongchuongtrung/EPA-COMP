@@ -1,7 +1,8 @@
 Week 8 Lab
 (a) Installing load monitoring tools - as root, use dnf install to install the packages sysstat and gcc-c++
 
-dnf install sysstat gcc-c++c
+dnf install sysstat gcc-c++
+#sudo dnf clean all && sudo dnf upgrade
 
 (b) Download and compile
 

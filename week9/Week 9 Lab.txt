@@ -8,10 +8,18 @@ Lots of CLI tools return data in json format (eg, our AWS tools, and mpstat). We
 (a) Installing the json parser
 
 As root, install the jq package, now exit and work as epauser
+Command as below:
+dnf install jq
+
+
 (b) invoking mpstat in json format
 
     using the man page for mpstat, work out how to invoke it so that it returns json not strings
     using the man page for mpstat, find out how mpstat can run for an interval of 10 seconds and produce 1 sample of CPU data
+
+Command as below:
+mpstat -o JSON
+mpstat -o JSON -I CPU 10 2
 
 (c) piping the commands together
 
